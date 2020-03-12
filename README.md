@@ -26,7 +26,8 @@ Once you have it working in the console, write an event listener that will use t
 
 **YOUR NOTES**
 ```
-
+The helper function saved me a bunch of time! I built an event listener so that when someone
+clicks the header element, it calls the toggleColor function on the event's target.
 ```
 
 ## Deliverable 2: Create Player
@@ -43,7 +44,10 @@ Some things to keep in mind:
 
 **YOUR NOTES**
 ```
-
+I had to use event.preventDefault() to prevent the page refresh.
+I built a player object so that I could run that through the renderPlayer() method.
+I forgot value at first so I was populating HTML with more HTML rather than text.
+Once I fixed that, I just had to use form.reset() to clear the form.
 ```
 
 ## Deliverable 3: Like Button
@@ -54,5 +58,10 @@ You can decide if you'd like to use *event delegation* to handle this, or if you
 
 **YOUR NOTES**
 ```
-
+I used event delegation so that every like button should have the same functionality.
+I grabbed the like text, pulled the number out, added 1, and then put it back into the HTML.
+I originally tried this with likesCount++, but that didn't work, so I did ++likesCount.
+I think that's because ++ changes the number after the function runs, which doesn't help me
+because the original number was already displayed and, upon future clicks, the variable
+is re-assigned.
 ```

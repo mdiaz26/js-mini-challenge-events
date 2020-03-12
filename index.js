@@ -40,7 +40,33 @@ function toggleColor(element) {
   }
 }
 
+const header = document.querySelector("#header")
+header.addEventListener("click", function(event){toggleColor(event.target)})
 
 /***** Deliverable 2 *****/
 
+const form = document.querySelector("#new-player-form")
+form.addEventListener("submit", function(event){
+  event.preventDefault()
+  let player = {
+    name: event.target.name.value,
+    nickname: event.target.nickname.value,
+    number: event.target.number.value,
+    likes: 1000,
+    photo: event.target.photo.value
+  }
+  // debugger
+  renderPlayer(player)
+  form.reset()
+})
+
 /***** Deliverable 3 *****/
+
+document.addEventListener("click", function(event){
+  if (event.target.className === "like-button"){
+    let parentNode = event.target.parentNode
+    let likesElement = parentNode.querySelector(".likes")
+    let likesCount = parseInt(likesElement.innerText.split(" ")[0])
+    likesElement.innerText = `${++likesCount} likes`
+  }
+})
